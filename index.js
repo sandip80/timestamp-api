@@ -6,6 +6,7 @@ var timeJSONString = function(unix, natural) {
 }
 
 var app = express()
+var port = process.env.PORT || 8000
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'))
@@ -27,6 +28,6 @@ app.get('/:time', function(req, res) {
     }
 })
 
-app.listen(process.env.PORT || 3000, function() {
-    console.log("App listening on port 8080..")
+app.listen(port, function() {
+    console.log("App listening on port " + port)
 })
